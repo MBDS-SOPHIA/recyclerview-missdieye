@@ -4,6 +4,7 @@ import com.openclassrooms.magicgithub.model.User
 
 class FakeApiService : ApiService {
     private val _users = FakeApiServiceGenerator.FAKE_USERS
+    private val _fakeUsers = FakeApiServiceGenerator.FAKE_USERS_RANDOM
 
     /**
      * Return a list of [User]
@@ -18,7 +19,7 @@ class FakeApiService : ApiService {
      * This user must be get from the [FakeApiServiceGenerator.FAKE_USERS_RANDOM] list.
      */
     override fun addRandomUser() {
-        _users.add(FakeApiServiceGenerator.FAKE_USERS.random())
+        _users.add(_fakeUsers.random())
     }
 
     /**
