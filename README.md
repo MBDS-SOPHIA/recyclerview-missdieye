@@ -17,7 +17,7 @@ dans une application Android.
 3. Lancer les tests unitaires un à un et corriger les erreurs 
 4. Lancer les tests instrumentaires
 5. Commit et push vos changements. Que remarquez-vous sur le repo Github ? 
-Les tests ont échoués.
+Les tests passent.
 
 ### Finaliser l'application
 1. Exécutez l'application et testez 
