@@ -28,4 +28,10 @@ class FakeApiService : ApiService {
     override fun deleteUser(user: User) {
         _users.remove(user)
     }
+    override fun changeStatusToInactive(user: User) {
+        user.active = false
+    }
+    override fun changeStatusToActive(user: User) {
+        user.active = true
+    }
 }

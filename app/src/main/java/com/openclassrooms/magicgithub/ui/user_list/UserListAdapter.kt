@@ -16,6 +16,7 @@ class UserListAdapter(  // FOR CALLBACK ---
 
     interface Listener {
         fun onClickDelete(user: User)
+        fun onClickRestore(user: User)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListUserViewHolder {

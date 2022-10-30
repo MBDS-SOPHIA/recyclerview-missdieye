@@ -6,4 +6,6 @@ interface ApiService {
     fun getUsers(): List<User>
     fun addRandomUser()
     fun deleteUser(username: User)
+    fun changeStatusToActive(user: User)
+    fun changeStatusToInactive(user: User)
 }

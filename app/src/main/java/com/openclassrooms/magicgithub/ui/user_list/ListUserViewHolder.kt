@@ -15,14 +15,22 @@ class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var avatar: ImageView = itemView.findViewById(R.id.item_list_user_avatar)
     private val username: TextView = itemView.findViewById(R.id.item_list_user_username)
     private val deleteButton: ImageButton = itemView.findViewById(R.id.item_list_user_delete_button)
+    private val restoreButton: ImageButton = itemView.findViewById(R.id.item_list_user_restore_button)
 
     fun bind(user: User, callback: UserListAdapter.Listener) {
+        if (!user.active) {
+            itemView.setBackgroundResource(R.color.colorRed)
+            restoreButton.visibility = View.VISIBLE
+        }else{
+            deleteButton.visibility = View.VISIBLE
+        }
         Glide.with(itemView.context)
             .load(user.avatarUrl)
             .apply(RequestOptions.circleCropTransform())
             .into(avatar)
         username.text = user.login
         deleteButton.setOnClickListener { callback.onClickDelete(user) }
+        restoreButton.setOnClickListener { callback.onClickRestore(user) }
     }
 
 }
