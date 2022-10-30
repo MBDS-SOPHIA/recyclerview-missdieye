@@ -45,7 +45,7 @@ class ListUserActivity : AppCompatActivity(), UserListAdapter.Listener {
 
     private fun configureFab() {
         fab = findViewById(R.id.activity_list_user_fab)
-        fab.setOnClickListener(View.OnClickListener { view: View? ->
+        binding.activityListUserFab.setOnClickListener(View.OnClickListener { view: View? ->
             getRepository().addRandomUser()
             loadData()
         })
